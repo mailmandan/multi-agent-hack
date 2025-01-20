@@ -1,4 +1,5 @@
-![Design 12 (1)](https://github.com/user-attachments/assets/81e80b19-124c-4c27-a18e-7fafaa39b9e8)
+
+![hackbanner](https://github.com/user-attachments/assets/d99b2037-789b-45c3-94a8-e2de97c75bcf)
 
 # The Future of AI Design: Unlocking Agent Capabilities with Azure
 
@@ -7,10 +8,12 @@
 | NR  | Time  | Title                                        | Description |
 | --- | ----- | -------------------------------------------- | ----------- |
 | 0   | 20'   | Day Intro                                    |             |
-| 1   | 40'   | Introduction to Azure AI Agent Service       | - Overview of Azure AI Agent Service and its capabilities<br>- Benefits and use cases<br>- AOAI Story: How we got here and where we are?<br>- Key concepts: AI agents, tools, threads, messages, and runs<br>- SK vs PromptFlow vs Autogen |
-| 2   | 30'   | Setting up your environment                  | - Github Codespaces<br>- Creating an Azure AI Hub and Agent project<br>- Configuring necessary Azure resources<br>- Installing required SDKs and tools<br>- Exploring the Azure AI Foundry portal<br><br>**BREAK** |
-| 3   | 120'  | Building your first agent                    | - Creating a basic agent using the Azure AI Foundry SDK<br>- Defining agent instructions and selecting a model<br>- Adding knowledge tools (e.g., Bing Search, File Search)<br>- Implementing action tools (e.g., Code Interpreter, Function Calling)<br><br>**LUNCH BREAK** |
-| 4   | 120'  | Advanced Agent Capabilities                  | - Working with multiple agents<br>- Integrating custom tools and APIs<br>- Implementing conversation state management<br>- Exploring different model options (e.g., GPT-4, Llama 3, Mistral) |
-| 5   | 180'  | Advancing Real-World Applications            | - Building the support chatbot<br>- Creating the App Service<br>- Building another chatbot<br>- Adding Cosmos DB<br>- Adding Az Function<br>- Persistence of Threads |
-| 6   | 30'   | Best Practices and Optimization              | - Security and compliance considerations<br>- Performance optimization techniques<br>- Monitoring and analytics<br>- Responsible AI implementation |
+| 1   | 40'   | Introduction to Azure AI Agent Service       | Overview, benefits, key concepts, and comparison of SK, PromptFlow, and Autogen. |
+| 2   | 30'   | Setting up your environment                  | Github Codespaces, Azure AI Hub, configuring resources, SDKs, and Foundry portal. |
+| 3   | 120'  | Building your first agent                    | Create a basic agent, add knowledge and action tools using Azure AI SDK. |
+| 4   | 120'  | Advanced Agent Capabilities                  | Multi-agent setup, custom tools, state management, and exploring models. |
+| 5   | 180'  | Advancing Real-World Applications            | Build chatbots, integrate Cosmos DB, Az Functions, and persistent threads. |
+| 6   | 30'   | Best Practices and Optimization              | Security, performance, monitoring, and responsible AI. |
 | 0   | 20'   | Closing                                      |             |
+
+
