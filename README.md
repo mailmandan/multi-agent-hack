@@ -1,7 +1,7 @@
 
 ![hackbanner](https://github.com/user-attachments/assets/d99b2037-789b-45c3-94a8-e2de97c75bcf)
 
-# The Future of AI Design: Unlocking Agent Capabilities with Azure
+# The Future of AI Design: Unlocking Multi-Agent Capabilities with Azure
 
 
 ## Introduction
