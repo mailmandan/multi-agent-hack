@@ -1,16 +1,26 @@
 
-![hackbanner](https://github.com/user-attachments/assets/d99b2037-789b-45c3-94a8-e2de97c75bcf)
+![Design 12 (2)](https://github.com/user-attachments/assets/2ae14e50-c370-48cf-bac0-5aee2700fcfe)
 
 # The Future of AI Design: Unlocking Multi-Agent Capabilities with Azure
 
+**Problem**: Agentic AI systems are set to transform the way businesses operate, however it can be fairly complex to build an initial MVP to demonstrate this value.
 
-## Introduction
+**Solution**: The Multi-Agent-Custom Automation Engine Solution Accelerator provides a ready to go application to use as the base of the MVP, or as a reference, allowing you to hit the ground running.
 
+## Use cases / scenarios
+The multi-agent approach allows users to utilize multiple AI agents simultaneously for repeatable tasks, ensuring consistency and efficiency. The agents collaborate with a manager on various assignments for onboarding a new employee, such as HR and tech support AI working together to set up software accounts, configure hardware, schedule onboarding meetings, register employees for benefits, and send welcome emails. Additionally, these agents can handle tasks like procurement and drafting press releases.
 
 ## Learning Objectives
 
 
 ## Requirements
+To successfully complete this hackathon, you will need the following:
+
+1. GitHub account to access the repository and run [GitHub Codespaces](https://github.com/features/codespaces).
+2. Familiarity with Python programming, including making API calls.
+3. The user deploying the template must have permission to create resources and resource groups.
+4. Ability to provision Azure Container Application, Azure OpenAI and Azure Cosmos DB resources.
+
 
 
 ## Workshop Agenda
