@@ -10,7 +10,16 @@
 ## Use cases / scenarios
 The multi-agent approach allows users to utilize multiple AI agents simultaneously for repeatable tasks, ensuring consistency and efficiency. The agents collaborate with a manager on various assignments for onboarding a new employee, such as HR and tech support AI working together to set up software accounts, configure hardware, schedule onboarding meetings, register employees for benefits, and send welcome emails. Additionally, these agents can handle tasks like procurement and drafting press releases.
 
+
 ## Learning Objectives
+
+By participating in this session, you will learn how to:
+
+- Understand how to quickly set up and deploy an initial MVP for Agentic AI systems.
+- Learn how to customize and build upon the provided base application to demonstrate value in business operations.
+- Gain hands-on experience with a solution that serves as both a starting point and a reference for building more complex AI-driven automation systems.
+- Develop the ability to rapidly prototype AI-powered solutions and accelerate time-to-market for business applications.
+- Explore the Agentic system ecosystem and familiarize themselves with the available frameworks, tools, and methodologies to enhance their AI-driven automation solutions.
 
 
 ## Requirements
