@@ -33,7 +33,67 @@ Please select your forked repository from the dropdown and, if necessary, adjust
 
 **NOTE:** If GitHub Codespaces is not enabled in your organization, you can enable it by following the instructions [here](https://docs.github.com/en/codespaces/managing-codespaces-for-your-organization/enabling-or-disabling-github-codespaces-for-your-organization), or, if you cannot change your GitHub organization's settings, create free personal GitHub account [here](https://github.com/signup?ref_cta=Sign+up&ref_loc=header+logged+out&ref_page=%2F&source=header-home).
 
-## Step 4 -  Enviornment Confirmation
+
+## Step 4 - Set Up Authentication in Azure App Service
+
+1. Click on `Authentication` from left menu.
+
+![Authentication](./images/azure-app-service-auth-setup/AppAuthentication.png)
+
+2. Click on `+ Add Provider` to see a list of identity providers.
+
+![Authentication Identity](./images/azure-app-service-auth-setup/AppAuthenticationIdentity.png)
+
+3. Click on `+ Add Provider` to see a list of identity providers.
+
+![Add Provider](./images/azure-app-service-auth-setup/AppAuthIdentityProvider.png)
+
+4. Select the first option `Microsoft Entra Id` from the drop-down list. If `Create new app registration` is disabled, go to [Step 1a](#step-1a-creating-a-new-app-registration).
+
+![Add Provider](./images/azure-app-service-auth-setup/AppAuthIdentityProviderAdd.png)
+
+5. Accept the default values and click on `Add` button to go back to the previous page with the idenity provider added.
+
+![Add Provider](./images/azure-app-service-auth-setup/AppAuthIdentityProviderAdded.png)
+
+### Step 1a: Creating a new App Registration
+
+1. Click on `Home` and select `Microsoft Entra ID`.
+
+![Microsoft Entra ID](./images/azure-app-service-auth-setup/MicrosoftEntraID.png)
+
+2. Click on `App registrations`.
+
+![App registrations](./images/azure-app-service-auth-setup/Appregistrations.png)
+
+3. Click on `+ New registration`.
+
+![New Registrations](./images/azure-app-service-auth-setup/NewRegistration.png)
+
+4. Provide the `Name`, select supported account types as `Accounts in this organizational directory only(Contoso only - Single tenant)`, select platform as `Web`, enter/select the `URL` and register.
+
+![Add Details](./images/azure-app-service-auth-setup/AddDetails.png)
+
+5. After application is created sucessfully, then click on `Add a Redirect URL`.
+
+![Redirect URL](./images/azure-app-service-auth-setup/AddRedirectURL.png)
+
+6. Click on `+ Add a platform`.
+
+![+ Add platform](./images/azure-app-service-auth-setup/AddPlatform.png)
+
+7. Click on `Web`.
+
+![Web](./images/azure-app-service-auth-setup/Web.png)
+
+8. Enter the `web app URL` (Provide the app service name in place of XXXX) and Save. Then go back to [Step 1](#step-1-add-authentication-in-azure-app-service-configuration) and follow from _Point 4_ choose `Pick an existing app registration in this directory` from the Add an Identity Provider page and provide the newly registered App Name.
+E.g. https://appservicename.azurewebsites.net/.auth/login/aad/callback
+
+![Add Details](./images/azure-app-service-auth-setup/WebAppURL.png)
+
+
+
+## Step 5 -  Enviornment Confirmation
 Go back to your `Azure Portal` and find your `Resource Group`that should by now contain 7 resources.
 
 After deploying the resources, you will need to configure the environment variables in the `.env` file. The `.env` file is a configuration file that contains the environment variables for the application. The `.env` file is automatically created running the following command within the terminal in your Codespace:
