@@ -34,7 +34,12 @@ To successfully complete this hackathon, you will need the following:
 ## Challenges
 Challenge 0: **[Deployment of Resources in Azure](Challenge0/readme.md)**
 
-Challenge 1:  **[First Challenge](Challenge1/readme.md)**
+Challenge 1:  **[Building your first agent](Challenge1/readme.md)**
+
+Challenge 2:  **[Advanced Agent Capabilities](Challenge2/readme.md)**
+
+Challenge 3:  **[Advancing Real-World Applications](Challenge3/readme.md)**
+
 
 Each challenge comes with its own set of tasks and objectives. Feel free to explore the challenges, learn, and have fun during this hackathon! If you have any questions, don't hesitate to reach out to your coach.
 
