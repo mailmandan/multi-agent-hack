@@ -1,6 +1,3 @@
-
-![Design 12 (2)](https://github.com/user-attachments/assets/2ae14e50-c370-48cf-bac0-5aee2700fcfe)
-
 # The Future of AI Design: Unlocking Multi-Agent Capabilities with Azure
 
 **Problem**: Agentic AI systems are set to transform the way businesses operate, however it can be fairly complex to build an initial MVP to demonstrate this value.
