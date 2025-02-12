@@ -4,22 +4,24 @@
 
 **Solution**: The Multi-Agent-Custom Automation Engine Solution Accelerator provides a ready to go application to use as the base of the MVP, or as a reference, allowing you to hit the ground running.
 
-## Use cases / scenarios
-The multi-agent approach allows users to utilize multiple AI agents simultaneously for repeatable tasks, ensuring consistency and efficiency. The agents collaborate with a manager on various assignments for onboarding a new employee, such as HR and tech support AI working together to set up software accounts, configure hardware, schedule onboarding meetings, register employees for benefits, and send welcome emails. Additionally, these agents can handle tasks like procurement and drafting press releases.
+## Important Security Notice
+
+This template, the application code and configuration it contains, has been built to showcase Microsoft Azure specific services and tools. We strongly advise our customers not to make this code part of their production environments without implementing or enabling additional security features.
 
 
-## Learning Objectives
+## Features
+This application demonstrates the following concepts and how to implement them:
 
-By participating in this session, you will learn how to:
+- How to build a highly scalable, multi-tenant & user, RAG Pattern application.
+- Generating embeddings and completions.
+- Managing a context window (chat history) for natural conversational interactions with an LLM.
+- Manage per-request token consumption for Azure OpenAI Service requests.
+- Building a semantic cache for improved performance and cost.
+- Implementing full-text and hybrid search using Azure Cosmos DB for NoSQL.
 
-- Understand how to quickly set up and deploy an initial MVP for Agentic AI systems.
-- Learn how to customize and build upon the provided base application to demonstrate value in business operations.
-- Gain hands-on experience with a solution that serves as both a starting point and a reference for building more complex AI-driven automation systems.
-- Develop the ability to rapidly prototype AI-powered solutions and accelerate time-to-market for business applications.
-- Explore the Agentic system ecosystem and familiarize themselves with the available frameworks, tools, and methodologies to enhance their AI-driven automation solutions.
+## Getting Started
 
-
-## Requirements
+### Prerequisites
 To successfully complete this hackathon, you will need the following:
 
 1. GitHub account to access the repository and run [GitHub Codespaces](https://github.com/features/codespaces).
@@ -27,6 +29,7 @@ To successfully complete this hackathon, you will need the following:
 3. The user deploying the template must have permission to create resources and resource groups.
 4. Ability to provision Azure Container Application, Azure OpenAI and Azure Cosmos DB resources.
 
+To start this hackathon, please follow the guidelines starting from Lab 0 throguh Lab 3, or automatically jump to the Lab 2 for implementation of the Multi Agent Accelerator
 
 ## Challenges
 Challenge 0: **[Deployment of Resources in Azure](Challenge0/readme.md)**
