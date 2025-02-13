@@ -32,11 +32,6 @@ This solution deploys [user-assigned managed identities](https://learn.microsoft
 - [Manged Identity Contributor](https://learn.microsoft.com/azure/role-based-access-control/built-in-roles/identity#managed-identity-contributor)
 - [DocumentDB Account Contributor](https://learn.microsoft.com/azure/role-based-access-control/built-in-roles/databases#documentdb-account-contributor)
 
-### Full-Text & Hybrid Search Feature
-
-Full-text and hybrid search in Azure Cosmos DB is in Preview and only available to a subset of regions at this time. This feature is commented out in the GetChatCompletionAsync() function in the ChatService. To use this feature you must deploy this sample in either `northcentralus` or `uksouth`.
-
-
 ## 🏋️ Challenges
 
 
