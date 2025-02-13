@@ -70,7 +70,7 @@ Average Monthly Cost:
 
 ## ⚠️ Important Security Notice
 
-This template, the application code and configuration it contains, has been built to showcase Microsoft Azure specific services and tools. We strongly advise our customers not to make this code part of their production environments without implementing or enabling additional security features.
+This template, the application code and configuration it contains, has been built to showcase Microsoft Azure specific services and tools. We strongly advise our customers not to make this code part of their production environments without implementing or enabling additional security features. For more guidance on designing state-of-the art AI workloads visit our [Well-Architectured Framework for AI](https://learn.microsoft.com/en-gb/azure/well-architected/ai/) page and visit our [landing zone guidance](https://learn.microsoft.com/en-us/azure/architecture/ai-ml/architecture/basic-openai-e2e-chat).
 
 
 Happy hacking! 
