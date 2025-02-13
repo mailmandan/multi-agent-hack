@@ -1,24 +1,21 @@
 # The Future of AI Design: Unlocking Multi-Agent Capabilities with Azure
 
-Agentic AI systems have the potential to transform the way businesses operate, but building an MVP to demonstrate this value can be challenging. 🚀 This guide will walk you through the key components of multi-agent systems, and provide you with an Accelerator featuring a ready-to-go application. Whether you use it as the foundation for your MVP or as a reference, this will help you hit the ground running and fast-track your development. ⚡️
+Agentic AI systems have the potential to transform the way businesses operate, but building an MVP to demonstrate this value can be challenging. This guide will walk you through the key components of multi-agent systems, and provide you with an Accelerator featuring a ready-to-go application. Whether you use it as the foundation for your MVP or as a reference, this will help you hit the ground running and fast-track your development.
 
-## Features
-This accelerator demonstrates the following concepts and how to implement them:
+## ✨ Features
+This repo demonstrates the following concepts and how to implement them:
 
 - 
 
-## Getting Started
+## 🚀 Getting Started
 
 ### Prerequisites
 To successfully complete this hackathon, you will need the following:
 
 1. GitHub account to access the repository and run [GitHub Codespaces](https://github.com/features/codespaces).
 2. Familiarity with Python programming, including making API calls.
-3. The user deploying the template must have permission to create resources and resource groups.
-4. Ability to provision Azure Container Application, Azure OpenAI and Azure Cosmos DB resources.
 
-To start this hackathon, please follow the guidelines starting from Lab 0 through Lab 3, or automatically jump to the Lab 2 for implementation of the Multi-Agent Accelerator.
-
+To start this hackathon, please follow the guidelines starting from Challenges 0 through Challenges 3.
 ### Deploying Azure OpenAI supported regions
 
 This template uses gpt-4o, dalle3 and text-embedding-3-large models by default using the Sweden Central region. If this region is not your preferred, please consider the models may not be available in all Azure regions. Check for [up-to-date region availability](https://learn.microsoft.com/azure/ai-services/openai/concepts/models) and select a region during deployment accordingly.
@@ -40,23 +37,26 @@ This solution deploys [user-assigned managed identities](https://learn.microsoft
 Full-text and hybrid search in Azure Cosmos DB is in Preview and only available to a subset of regions at this time. This feature is commented out in the GetChatCompletionAsync() function in the ChatService. To use this feature you must deploy this sample in either `northcentralus` or `uksouth`.
 
 
-## Challenges
-
-**Challenge 0: [Deployment of Resources in Azure](Challenge0/readme.md)**
-Deploy and configure the necessary Azure resources, including the AI services that will be used throughout the hackathon, ensuring a solid foundation for the upcoming tasks and enabling seamless execution of the subsequent challenges.
-
-**Challenge 1:  [Building your first Multi-Agent](Challenge1/readme.md)**
-A step-by-step guide on creating your own Travel Agency Agents: create a team composed of several planners, guides and marketing professionals to create a personalized travel with tailored itineraries, local guidance, whilst delivering enriched content to your customers.
+## 🏋️ Challenges
 
 
-**Challenge 2:  [Expand Your Multi-Agent Capabilities](Challenge2/readme.md)**
+Challenge 0: [Deployment of Resources in Azure](Challenge0/readme.md)
+- Deploy and configure the necessary Azure resources, including the AI services that will be used throughout the hackathon, ensuring a solid foundation for the upcoming tasks and enabling seamless execution of the subsequent challenges.
 
-**Challenge 3: [Advancing Real-World Applications](Challenge3/readme.md)**
+Challenge 1:  [Building your first Multi-Agent](Challenge1/readme.md)
+
+- A step-by-step guide on creating your own Travel Agency Agents: create a team composed of several planners, guides and marketing professionals to create a personalized travel with tailored itineraries, local guidance, whilst delivering enriched content to your customers.
 
 
-Each challenge comes with its own set of tasks and objectives. Feel free to explore the challenges, learn, and have fun during this hackathon! If you have any questions, don't hesitate to reach out to your coach.
+Challenge 2:  [Expand Your Multi-Agent Capabilities](Challenge2/readme.md)
 
-## Costs
+
+Challenge 3: [Advancing Real-World Applications](Challenge3/readme.md)
+
+
+
+Each challenge comes with its own set of tasks and objectives. Feel free to explore the challenges, learn, and have fun during this hackathon! 
+## 💰 Costs
 
 You can estimate the cost of this project's architecture with [Azure's pricing calculator](https://azure.microsoft.com/pricing/calculator/)
 
