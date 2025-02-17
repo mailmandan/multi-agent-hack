@@ -1,4 +1,5 @@
-## Challenge 0 - Enviornment Creation and Resources Deployment
+
+[![Deploy to Azure](https://aka.ms/deploytoazurebutton)](https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2Fmartaldsantos%2Fmulti-agent-hack%2Fmain%2Fazuredeploy.json)## Challenge 0 - Enviornment Creation and Resources Deployment
 
 **Expected Duration:** 30 minutes
 
@@ -13,9 +14,11 @@ Before you start, please fork this repository to your GitHub account by clicking
 
 The first step on this hackathon will be to create the resources we will use throughout the day. Clicking on button bellow will redirect you to the Azure portal to deploy the resources using the [ARM template](iac) provided in this repository.
 
-[![Deploy to Azure](https://aka.ms/deploytoazurebutton)](https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2Fmartaldsantos%2Fdoc-process-hack%2Fmain%2FChallenge1%2Fiac%2Fazuredeploy.json)
+[![Deploy to Azure](https://aka.ms/deploytoazurebutton)](https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2Fmartaldsantos%2Fmulti-agent-hack%2Fmain%2FChallenge0%2Fdeploy%2Fmacae-continer.bicep)
 
 **NOTE:** Deployment may fail if the resource provider `Microsoft.AlertsManagement` is not registered in your. Follow the [documentation](https://learn.microsoft.com/en-us/azure/azure-resource-manager/management/resource-providers-and-types#register-resource-provider-1) to register it and the re-run the deployment.
+
+**NOTE:** If you encounter an error downloading the template from the URI, ensure that the template is publicly accessible and that the publisher has enabled CORS policy on the endpoint. To deploy this template, download the template manually and paste the contents in the 'Build your own template in the editor' option below.
 
 Resource deployment can take up to 5 minutes. Once the deployment is complete, you will see the resources in your Azure portal.
 
