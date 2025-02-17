@@ -103,6 +103,9 @@ cd challenge0
 ./get-keys.sh --resource-group <resource-group-name>
 ```
 
+If needed run `chmod u+rx get-keys.sh` before the get keys script with the resource group.
+ 
+
 This script will connect to Azure and fetch the necessary keys and populate the `.env` file with the required values in the root directory of the repository. If needed, script will prompt you to sign in to your Azure account.
 
 When the script is finished, review the `.env` file to ensure that all the values are correct. If you need to make any changes, you can do so manually.
