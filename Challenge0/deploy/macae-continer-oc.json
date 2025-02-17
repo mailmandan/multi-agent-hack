@@ -12,14 +12,14 @@
   "parameters": {
     "location": {
       "type": "string",
-      "defaultValue": "EastUS2",
+      "defaultValue": "swedencentral",
       "metadata": {
         "description": "Location for all resources."
       }
     },
     "azureOpenAILocation": {
       "type": "string",
-      "defaultValue": "EastUS",
+      "defaultValue": "swedencentral",
       "metadata": {
         "description": "Location for OpenAI resources."
       }

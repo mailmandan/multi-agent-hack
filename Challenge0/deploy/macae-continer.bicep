@@ -1,8 +1,8 @@
 @description('Location for all resources.')
-param location string = 'EastUS2' //Fixed for model availability, change back to resourceGroup().location
+param location string = 'swedencentral' //Fixed for model availability, change back to resourceGroup().location
 
 @description('Location for OpenAI resources.')
-param azureOpenAILocation string = 'EastUS' //Fixed for model availability
+param azureOpenAILocation string = 'swedencentral' //Fixed for model availability
 
 
 
@@ -90,6 +90,21 @@ resource openai 'Microsoft.CognitiveServices/accounts@2023-10-01-preview' = {
         format: 'OpenAI'
         name: 'gpt-4o'
         version: '2024-08-06'
+      }
+      versionUpgradeOption: 'NoAutoUpgrade'
+    }
+  }
+  resource dalle 'deployments' = {
+    name: 'dall-e-3'
+    sku: {
+      name: 'GlobalStandard'
+      capacity: resourceSize.gpt4oCapacity
+    }
+    properties: {
+      model: {
+        format: 'OpenAI'
+        name: 'dall-e-3'
+        version: '2024-02-01'
       }
       versionUpgradeOption: 'NoAutoUpgrade'
     }
@@ -282,6 +297,10 @@ resource containerApp 'Microsoft.App/containerApps@2024-03-01' = {
             {
               name: 'APPLICATIONINSIGHTS_INSTRUMENTATION_KEY'
               value: appInsights.properties.ConnectionString
+            }
+            {
+              name: 'AZURE_OPENAI_DALLE_DEPLOYMENT_NAME'
+              value: openai::dalle.name
             }
           ]
         }
