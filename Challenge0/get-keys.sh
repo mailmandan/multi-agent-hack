@@ -1,19 +1,30 @@
 #!/bin/bash
 #
 # This script will retrieve necessary keys and properties from Azure Resources 
-# deployed using "Deploy to Azure" button and will store them in a file named
-# "config.env" in the current directory.
+# and store them in a file named ".env" in the parent directory.
+
+set -e  # Exit on error
+
+# Function to check command status and output
+check_command() {
+    local result=$1
+    local error_message=$2
+    
+    if [ -z "$result" ]; then
+        echo "Error: $error_message - Empty response"
+        exit 1
+    fi
+    echo "Retrieved: $result"
+}
 
 # Login to Azure
-if [ -z "$(az account show)" ]; then
-  echo "User not signed in Azure. Signin to Azure using 'az login' command."
-  az login --use-device-code
+if [ -z "$(az account show 2>/dev/null)" ]; then
+    echo "User not signed in Azure. Signin to Azure using 'az login' command."
+    az login --use-device-code
 fi
 
-# Get the resource group name from the script parameter named resource-group
+# Get the resource group name from parameter
 resourceGroupName=""
-
-# Parse named parameters
 while [[ "$#" -gt 0 ]]; do
     case $1 in
         --resource-group) resourceGroupName="$2"; shift ;;
@@ -28,62 +39,108 @@ if [ -z "$resourceGroupName" ]; then
     read resourceGroupName
 fi
 
-# Get resource group deployments, find deployments starting with 'Microsoft.Template' and sort them by timestamp
-echo "Getting the deployments in '$resourceGroupName'..."
-deploymentName=$(az deployment group list --resource-group $resourceGroupName --query "[?contains(name, 'Microsoft.Template') || contains(name, 'azuredeploy')].{name:name}[0].name" --output tsv)
-if [ $? -ne 0 ]; then
-	echo "Error occurred while fetching deployments. Exiting..."
-	exit 1
+# List resources in the resource group for debugging
+echo "Resources in resource group $resourceGroupName:"
+az resource list --resource-group "$resourceGroupName" --output table
+
+# Find CosmosDB account
+echo "Finding CosmosDB account..."
+cosmosdbAccountName=$(az resource list --resource-group "$resourceGroupName" \
+    --resource-type "Microsoft.DocumentDB/databaseAccounts" \
+    --query '[0].name' -o tsv)
+check_command "$cosmosdbAccountName" "No CosmosDB account found"
+echo "Found CosmosDB account: $cosmosdbAccountName"
+
+# Find Cognitive Services account (OpenAI)
+echo "Finding Azure OpenAI service..."
+openaiServiceName=$(az resource list --resource-group "$resourceGroupName" \
+    --resource-type "Microsoft.CognitiveServices/accounts" \
+    --query "[?kind=='OpenAI'].name" -o tsv)
+check_command "$openaiServiceName" "No Azure OpenAI service found"
+echo "Found Azure OpenAI service: $openaiServiceName"
+
+# Find Application Insights
+echo "Finding Application Insights..."
+appInsightsName=$(az resource list --resource-group "$resourceGroupName" \
+    --resource-type "Microsoft.Insights/components" \
+    --query '[0].name' -o tsv)
+check_command "$appInsightsName" "No Application Insights found"
+echo "Found Application Insights: $appInsightsName"
+
+# Get resource details and keys
+echo "Getting resource details and keys..."
+
+# CosmosDB details
+echo "Retrieving CosmosDB endpoint..."
+cosmosdbEndpoint=$(az cosmosdb show --name "$cosmosdbAccountName" \
+    --resource-group "$resourceGroupName" \
+    --query "documentEndpoint" -o tsv)
+check_command "$cosmosdbEndpoint" "Failed to get CosmosDB endpoint"
+
+echo "Retrieving CosmosDB key..."
+cosmosdbKey=$(az cosmosdb keys list --name "$cosmosdbAccountName" \
+    --resource-group "$resourceGroupName" \
+    --query "primaryMasterKey" -o tsv)
+check_command "$cosmosdbKey" "Failed to get CosmosDB key"
+
+# OpenAI details
+echo "Retrieving OpenAI endpoint..."
+openaiEndpoint=$(az cognitiveservices account show --name "$openaiServiceName" \
+    --resource-group "$resourceGroupName" \
+    --query "properties.endpoint" -o tsv)
+check_command "$openaiEndpoint" "Failed to get OpenAI endpoint"
+
+echo "Retrieving OpenAI key..."
+openaiKey=$(az cognitiveservices account keys list --name "$openaiServiceName" \
+    --resource-group "$resourceGroupName" \
+    --query "key1" -o tsv)
+check_command "$openaiKey" "Failed to get OpenAI key"
+
+# Check and install Application Insights extension if needed
+echo "Checking for Application Insights extension..."
+if ! az extension show --name application-insights >/dev/null 2>&1; then
+    echo "Installing application-insights extension..."
+    az extension add --name application-insights --only-show-errors
 fi
 
-# Get output parameters from last deployment to the resource group and store them as variables
-echo "Getting the output parameters from the last deployment '$deploymentName' in '$resourceGroupName'..."
-az deployment group show --resource-group $resourceGroupName --name $deploymentName --query properties.outputs > tmp_outputs.json
-if [ $? -ne 0 ]; then
-	echo "Error occurred while fetching the output parameters. Exiting..."
-	exit 1
+# Application Insights key
+echo "Debug: Application Insights name = $appInsightsName"
+echo "Debug: Resource group = $resourceGroupName"
+echo "Retrieving Application Insights key..."
+
+# Get Application Insights key
+appInsightsKey=$(az monitor app-insights component show \
+    --app "$appInsightsName" \
+    --resource-group "$resourceGroupName" \
+    --query "instrumentationKey" -o tsv)
+check_command "$appInsightsKey" "Failed to get Application Insights key"
+
+# Create .env file with progress indication
+echo "Creating .env file..."
+cat > ../.env << EOF
+COSMOS_ENDPOINT="${cosmosdbEndpoint}"
+COSMOSDB_DATABASE="autogen"
+COSMOSDB_CONTAINER="memory"
+COSMOS_KEY="${cosmosdbKey}"
+AZURE_OPENAI_ENDPOINT="${openaiEndpoint}"
+AZURE_OPENAI_KEY="${openaiKey}"
+AZURE_OPENAI_MODEL_NAME="gpt-4o"
+AZURE_OPENAI_DEPLOYMENT_NAME="gpt-4o"
+AZURE_OPENAI_API_VERSION="2024-08-01-preview"
+APPLICATIONINSIGHTS_INSTRUMENTATION_KEY="${appInsightsKey}"
+BACKEND_API_URL="http://localhost:8000"
+FRONTEND_SITE_NAME="http://127.0.0.1:3000"
+EOF
+
+# Verify the .env file was created with content
+if [ ! -s ../.env ]; then
+    echo "Error: .env file is empty or was not created"
+    exit 1
 fi
 
-# Extract the resource names from the output parameters
-echo "Extracting the resource names from the output parameters..."
-cosmosdbAccountName=$(jq -r '.cosmosdbAccountName.value' tmp_outputs.json)
-storageAccountName=$(jq -r '.storageAccountName.value' tmp_outputs.json)
-documentIntelligenceName=$(jq -r '.documentIntelligenceName.value' tmp_outputs.json)
-aiCognitiveServicesName=$(jq -r '.aiCognitiveServicesName.value' tmp_outputs.json)
-searchServiceName=$(jq -r '.searchServiceName.value' tmp_outputs.json)
-
-# Delete the temporary file
-rm tmp_outputs.json
-
-# Get the keys from the resources
-echo "Getting the keys from the resources..."
-cosmosdbAccountKey=$(az cosmosdb keys list --name $cosmosdbAccountName --resource-group $resourceGroupName --query primaryMasterKey -o tsv)
-cosmosdbEndpoint=$(az cosmosdb show --name $cosmosdbAccountName --resource-group $resourceGroupName --query "documentEndpoint" -o tsv)
-storageAccountKey=$(az storage account keys list --account-name $storageAccountName --resource-group $resourceGroupName --query "[0].value" -o tsv)
-storageAccountConnectionString=$(az storage account show-connection-string --name $storageAccountName --resource-group $resourceGroupName --query connectionString -o tsv)
-documentIntelligenceEndpoint=$(az cognitiveservices account show --name $documentIntelligenceName --resource-group $resourceGroupName --query "properties.endpoints.FormRecognizer" -o tsv)
-documentIntelligenceKey=$(az cognitiveservices account keys list --name $documentIntelligenceName --resource-group $resourceGroupName --query key1 -o tsv)
-aiCognitiveServicesEndpoint=$(az cognitiveservices account show --name $aiCognitiveServicesName --resource-group $resourceGroupName --query properties.endpoint -o tsv)
-aiCognitiveServicesKey=$(az cognitiveservices account keys list --name $aiCognitiveServicesName --resource-group $resourceGroupName --query key1 -o tsv)
-searchServiceKey=$(az search admin-key show --resource-group $resourceGroupName --service-name $searchServiceName --query primaryKey -o tsv)
-
-# Overwrite the existing config.env file
-if [ -f ../.env ]; then
-	rm ../.env
+# Add this after verifying the .env file and before the final success message
+if [ -f tmp_outputs.json ]; then
+    rm tmp_outputs.json
 fi
 
-# Store the keys and properties in a file
-echo "Storing the keys and properties in '.env' file..."
-echo "STORAGE_ACCOUNT_NAME=\"$storageAccountName\"" >> ../.env
-echo "STORAGE_KEY=\"$storageAccountKey\"" >> ../.env
-echo "STORAGE_CONNECTION_STRING=\"$storageAccountConnectionString\"" >> ../.env
-echo "COSMOS_ENDPOINT=\"$cosmosdbEndpoint\"" >> ../.env
-echo "COSMOS_KEY=\"$cosmosdbAccountKey\"" >> ../.env
-echo "DOC_AI_ENDPOINT=\"$documentIntelligenceEndpoint\"" >> ../.env
-echo "DOC_AI_KEY=\"$documentIntelligenceKey\"" >> ../.env
-echo "AZURE_OPENAI_ENDPOINT=\"$aiCognitiveServicesEndpoint\"" >> ../.env
-echo "AZURE_OPENAI_KEY=\"$aiCognitiveServicesKey\"" >> ../.env
-echo "SEARCH_SERVICE_NAME=\"$searchServiceName\"" >> ../.env
-echo "SEARCH_ADMIN_KEY=\"$searchServiceKey\"" >> ../.env
-
-echo "Keys and properties are stored in '.env' file successfully."
+echo "Keys and properties have been stored in ../.env file successfully."
