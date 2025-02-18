@@ -1,10 +1,11 @@
 {
   "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json",
+  "languageVersion": "2.0",
   "contentVersion": "1.0.0.0",
   "metadata": {
     "_generator": {
       "name": "bicep",
-      "version": "0.32.4.45862",
+      "version": "0.31.34.60546",
       "templateHash": "13282901028774763433"
     }
   },
