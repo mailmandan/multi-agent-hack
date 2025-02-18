@@ -101,7 +101,7 @@ Go back to your `Azure Portal` and find your `Resource Group`that should by now 
 After deploying the resources, you will need to configure the environment variables in the `.env` file. The `.env` file is a configuration file that contains the environment variables for the application. The `.env` file is automatically created running the following command within the terminal in your Codespace:
 
 ```bash
-cd challenge0
+cd Challenge0
 ./get-keys.sh --resource-group <resource-group-name>
 ```
 
