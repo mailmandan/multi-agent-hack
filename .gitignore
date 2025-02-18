@@ -170,4 +170,7 @@ cython_debug/
 
 # PyPI configuration file
 .pypirc
+
+#new config
 Challenge1/OAI_CONFIG_LIST.json
+Challenge1/images/
