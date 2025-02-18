@@ -32,6 +32,7 @@ To open GitHub Codespaces, click on the button below:
 [![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/)
 
 Please select your forked repository from the dropdown and, if necessary, adjust other settings of GitHub Codespace.
+You will not need to run your requirements as they are already pre-installed on the codespaces enviornment. 
 
 **NOTE:** If GitHub Codespaces is not enabled in your organization, you can enable it by following the instructions [here](https://docs.github.com/en/codespaces/managing-codespaces-for-your-organization/enabling-or-disabling-github-codespaces-for-your-organization), or, if you cannot change your GitHub organization's settings, create free personal GitHub account [here](https://github.com/signup?ref_cta=Sign+up&ref_loc=header+logged+out&ref_page=%2F&source=header-home).
 
@@ -107,7 +108,6 @@ cd Challenge0
 
 If needed run `chmod u+rx get-keys.sh` before the get keys script with the resource group.
  
-
 This script will connect to Azure and fetch the necessary keys and populate the `.env` file with the required values in the root directory of the repository. If needed, script will prompt you to sign in to your Azure account.
 
 When the script is finished, review the `.env` file to ensure that all the values are correct. If you need to make any changes, you can do so manually.
