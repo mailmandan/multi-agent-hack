@@ -94,11 +94,26 @@ resource openai 'Microsoft.CognitiveServices/accounts@2023-10-01-preview' = {
       versionUpgradeOption: 'NoAutoUpgrade'
     }
   }
+  resource gpt4 'deployments' = {
+    name: 'gpt-4'
+    sku: {
+      name: 'GlobalStandard'
+      capacity: resourceSize.gpt4oCapacity
+    }
+    properties: {
+      model: {
+        format: 'OpenAI'
+        name: 'gpt-4'
+        version: '1106-Preview'
+      }
+      versionUpgradeOption: 'NoAutoUpgrade'
+    }
+  }
   resource dalle 'deployments' = {
     name: 'dall-e-3'
     sku: {
       name: 'GlobalStandard'
-      capacity: resourceSize.gpt4oCapacity
+      capacity: 1
     }
     properties: {
       model: {
@@ -285,6 +300,14 @@ resource containerApp 'Microsoft.App/containerApps@2024-03-01' = {
             {
               name: 'AZURE_OPENAI_DEPLOYMENT_NAME'
               value: openai::gpt4o.name
+            }
+            {
+              name: 'AZURE_OPENAI_GPT4_DEPLOYMENT_NAME'
+              value: openai::gpt4.name
+            }
+            {
+              name: 'AZURE_OPENAI_DALLE_DEPLOYMENT_NAME'
+              value: openai::dalle.name
             }
             {
               name: 'AZURE_OPENAI_API_VERSION'

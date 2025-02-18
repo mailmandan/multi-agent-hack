@@ -2,9 +2,9 @@
     {
         "model": "gpt-4",
         "api_type": "azure",
-        "api_key": "<Your Azure Open AI API Key>",
-        "base_url": "<Your Azure Open AI Base URL>",
-        "api_version": "<Your GPT-4 VERSION>",
+        "api_key": "f8463a882b80413a8222a7cdeb4801b2",
+        "base_url": "https://macae-openai-6e5iafn5wy576.openai.azure.com",
+        "api_version": "2024-08-06",
         "tags": [
             "<Name of your GPT4 Model>",
             "gpt-4",
@@ -17,8 +17,8 @@
     {
         "model": "dall-e-3",
         "api_type": "azure",
-        "api_key": "<Your Azure Open AI API Key>",
-        "base_url": "<Your Azure Open AI Base URL>",
+        "api_key": "f8463a882b80413a8222a7cdeb4801b2",
+        "base_url": "https://macae-openai-6e5iafn5wy576.openai.azure.com",
         "api_version": "<Your DALL-E-3 VERSION>",
         "tags": [
             "dall-e-3",
