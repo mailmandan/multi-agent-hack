@@ -122,20 +122,22 @@
         "model": {
           "format": "OpenAI",
           "name": "gpt-4",
-          "version": "1106-Preview"
+          "version": "turbo-2024-04-09"
         },
         "versionUpgradeOption": "NoAutoUpgrade"
       },
       "dependsOn": [
-        "openai"
+        "openai",
+        "openai::gpt4o"
       ]
-    },
+    }
+    ,
     "openai::dalle3": {
       "type": "Microsoft.CognitiveServices/accounts/deployments",
       "apiVersion": "2023-10-01-preview",
       "name": "[format('{0}/{1}', format(variables('uniqueNameFormat'), 'openai'), 'dall-e-3')]",
       "sku": {
-        "name": "GlobalStandard",
+        "name": "Standard",
         "capacity": 1
       },
       "properties": {
@@ -147,7 +149,9 @@
         "versionUpgradeOption": "NoAutoUpgrade"
       },
       "dependsOn": [
-        "openai"
+        "openai",
+        "openai::gpt4o",
+        "openai::gpt4"
       ]
     },
     "cosmos::autogenDb::memoryContainer": {
