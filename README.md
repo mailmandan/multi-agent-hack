@@ -12,7 +12,6 @@ This repo demonstrates the following concepts and how to implement them:
 - GitHub Codespaces for instant development environment setup
 - Infrastructure as Code (IaC) using Azure Bicep/ARM templates
 - Structured logging and telemetry
-
  
 
 ## 🚀 Getting Started
@@ -24,6 +23,7 @@ To successfully complete this hackathon, you will need the following:
 2. Familiarity with Python programming, including making API calls.
 
 To start this hackathon, please follow the guidelines starting from Challenges 0 through Challenges 3.
+
 ### Deploying Azure OpenAI supported regions
 
 This template uses gpt-4o, dalle3 and text-embedding-3-large models by default using the Sweden Central region. If this region is not your preferred, please consider the models may not be available in all Azure regions. Check for [up-to-date region availability](https://learn.microsoft.com/azure/ai-services/openai/concepts/models) and select a region during deployment accordingly.
@@ -53,7 +53,7 @@ Challenge 1:  [Building your first Multi-Agent](Challenge1/readme.md)
 
 Challenge 2:  [Expand Your Multi-Agent Capabilities](Challenge2/readme.md)
 
-Now that you know the basics of Multi-Agent scenarios, it's time to build your own!We'll start by using the MACAE app that will aid you on having the basic setup created. Then, this open-ended exercise will guide you through the customization path your MVP needs. 
+- Now that you know the basics of Multi-Agent scenarios, it's time to build your own!We'll start by using the MACAE app that will aid you on having the basic setup created. Then, this open-ended exercise will guide you through the customization path your MVP needs. 
 
 Challenge 3: [Advancing Real-World Applications](Challenge3/readme.md)
 
@@ -70,12 +70,11 @@ Average Monthly Cost:
 * Azure App Service (B1 Plan): $13.14
 * Azure OpenAI (GPT-4o 1M input/output tokens): $12,50 (Sample uses 10K tokens)
 * Azure OpenAI (text-3-large - 1M tokens):  $0.13 (Sample uses 5K tokens)
-* Azure Application Insights - FREE for the first 3 months, after that 1GB x 30 days - $74,75 (Sample uses 0,001 GB)
+* Azure Application Insights and Log Analytics - FREE for the first 3 months (Sample uses 0,001 GB. 1GB is $74,75)
 
 ## ⚠️ Important Security Notice
 
 This template, the application code and configuration it contains, has been built to showcase Microsoft Azure specific services and tools. We strongly advise our customers not to make this code part of their production environments without implementing or enabling additional security features. For more guidance on designing state-of-the art AI workloads visit our [Well-Architectured Framework for AI](https://learn.microsoft.com/en-gb/azure/well-architected/ai/) page and visit our [landing zone guidance](https://learn.microsoft.com/en-us/azure/architecture/ai-ml/architecture/basic-openai-e2e-chat).
-
 
 Happy hacking! 
 
