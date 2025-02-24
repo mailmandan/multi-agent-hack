@@ -106,19 +106,19 @@ fi
 # Application Insights key
 echo "Debug: Application Insights name = $appInsightsName"
 echo "Debug: Resource group = $resourceGroupName"
-echo "Retrieving Application Insights key..."
+echo "Retrieving Application Insights connection string..."
 
-# Get Application Insights key
-appInsightsKey=$(az monitor app-insights component show \
+# Get Application Insights connection string
+appInsightsConnectionString=$(az monitor app-insights component show \
     --app "$appInsightsName" \
     --resource-group "$resourceGroupName" \
-    --query "instrumentationKey" -o tsv)
-check_command "$appInsightsKey" "Failed to get Application Insights key"
+    --query "connectionString" -o tsv)
+check_command "$appInsightsConnectionString" "Failed to get Application Insights connection string"
 
 # Create .env file with progress indication
 echo "Creating .env file..."
 cat > ../.env << EOF
-COSMOS_ENDPOINT="${cosmosdbEndpoint}"
+COSMOSDB_ENDPOINT="${cosmosdbEndpoint}"
 COSMOSDB_DATABASE="autogen"
 COSMOSDB_CONTAINER="memory"
 COSMOS_KEY="${cosmosdbKey}"
@@ -127,7 +127,7 @@ AZURE_OPENAI_KEY="${openaiKey}"
 AZURE_OPENAI_MODEL_NAME="gpt-4o"
 AZURE_OPENAI_DEPLOYMENT_NAME="gpt-4o"
 AZURE_OPENAI_API_VERSION="2024-08-01-preview"
-APPLICATIONINSIGHTS_INSTRUMENTATION_KEY="${appInsightsKey}"
+APPLICATIONINSIGHTS_INSTRUMENTATION_KEY="${appInsightsConnectionString}"
 BACKEND_API_URL="http://localhost:8000"
 FRONTEND_SITE_NAME="http://127.0.0.1:3000"
 EOF
