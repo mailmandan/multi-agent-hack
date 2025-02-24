@@ -1,4 +1,4 @@
-# Lab 2 - Advanced Agent Capabilities
+# Lab 2 - Expand Your Multi-Agent Capabilities
 
 **Expected Duration:** 120 minutes
 
@@ -9,7 +9,7 @@ Now that you know the basics of Multi-Agent scenarios, it's time to build your o
 
 Now you might be wondering,  <em>where do I even start? </em>
 
-**Accelerating 🚗💨!** Microsoft has built some accelerators to help you on your journey. We will start from an empty (already created) app that will aid you on having the basic setup created. Today we will be using the [Multi-Agent Custom Automation Engine Solution Accelerator (MACAE)](https://github.com/microsoft/Multi-Agent-Custom-Automation-Engine-Solution-Accelerator), that provides a ready to go application to use as the base of the MVP, or as a reference, allowing you to hit the ground running.
+**Accelerating 🚗💨!** Microsoft has built some accelerators to help you on your journey. We will start from a sample app that will aid you on having the basic setup created. Today we will be using the [Multi-Agent Custom Automation Engine Solution Accelerator (MACAE)](https://github.com/microsoft/Multi-Agent-Custom-Automation-Engine-Solution-Accelerator), that provides a ready to go application to use as the base of the MVP, or as a reference, allowing you to hit the ground running.
 
 This is an open-ended exercise, which means there is no ground truth, as what you need is different from other teams' use cases. Therefore, this exercise will require you to consult documentation, ask for help and brainstorm as a team.
 
