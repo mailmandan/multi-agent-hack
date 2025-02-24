@@ -51,7 +51,8 @@ python frontend_server.py
 
 Great! If you've made it this far you should be able to see an empty app that looks something like this:
 
-[insert image]
+![image](https://github.com/user-attachments/assets/e5c6fb4d-e615-46fb-ba6e-a7ddfb7714e0)
+
 
 Now we need to populate it. 
 
