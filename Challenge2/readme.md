@@ -37,13 +37,13 @@ pip install -r requirements.txt
 ```
 
 3. **Run the application:**
-- From the src/backend directory:
+- First, we run the backend:
 ```bash
-python app.py
+cd Challenge2/src/backend && python app.py
 ```
-- In a new terminal from the src/frontend directory
+- In a new terminal, run:
 ```bash
-python frontend_server.py
+cd Challenge2/src/frontend && python frontend_server.py
 ```
 
 4. Open a browser and navigate to `http://localhost:3000`
