@@ -135,6 +135,7 @@ venv/
 ENV/
 env.bak/
 venv.bak/
+OAI_CONFIG_LIST.json
 
 # Spyder project settings
 .spyderproject
@@ -169,3 +170,7 @@ cython_debug/
 
 # PyPI configuration file
 .pypirc
+
+#new config
+Challenge1/OAI_CONFIG_LIST.json
+Challenge1/images/

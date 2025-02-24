@@ -32,7 +32,7 @@ To start this first demo, we will use the resources that have been deployed for 
 
 ## Exercise 2: Running your first agent
 
-Please jump over to the multiagent101.ipynb file to complete this guide.
+Please jump over to the `multiagent101.ipynb` file to complete this guide. In the end of your notebook, you will be prompted to as the BOSS agent coordinate these teams. Please make sure to try out several prompts, including the ones that will trigger the image creation of your Seattle trip.
 
 ## **Conclusion**
 

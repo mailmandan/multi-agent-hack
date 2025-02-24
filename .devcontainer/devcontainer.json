@@ -11,6 +11,9 @@
       "extensions": [
         "ms-python.python",
         "ms-azuretools.vscode-azurecli",
+        "ms-vscode.azure-account",
+        "github.copilot",
+				"github.copilot-chat",
         "ms-vscode.azure-account"
       ]
     }

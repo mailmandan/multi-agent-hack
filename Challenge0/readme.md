@@ -13,9 +13,11 @@ Before you start, please fork this repository to your GitHub account by clicking
 
 The first step on this hackathon will be to create the resources we will use throughout the day. Clicking on button bellow will redirect you to the Azure portal to deploy the resources using the [ARM template](iac) provided in this repository.
 
-[![Deploy to Azure](https://aka.ms/deploytoazurebutton)](https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2Fmicrosoft%2FMulti-Agent-Custom-Automation-Engine-Solution-Accelerator%2Frefs%2Fheads%2Fmain%2Fdeploy%2Fmacae-continer-oc.json)
+[![Deploy to Azure](https://aka.ms/deploytoazurebutton)](https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2Fmartaldsantos%2Fmulti-agent-hack%2Fmain%2FChallenge0%2Fdeploy%2Fazuredeploy.json)
 
 **NOTE:** Deployment may fail if the resource provider `Microsoft.AlertsManagement` is not registered in your. Follow the [documentation](https://learn.microsoft.com/en-us/azure/azure-resource-manager/management/resource-providers-and-types#register-resource-provider-1) to register it and the re-run the deployment.
+
+**NOTE:** If you encounter an error downloading the template from the URI, ensure that the template is publicly accessible and that the publisher has enabled CORS policy on the endpoint. To deploy this template, download the template manually and paste the contents in the 'Build your own template in the editor' option below.
 
 Resource deployment can take up to 5 minutes. Once the deployment is complete, you will see the resources in your Azure portal.
 
@@ -30,6 +32,7 @@ To open GitHub Codespaces, click on the button below:
 [![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/)
 
 Please select your forked repository from the dropdown and, if necessary, adjust other settings of GitHub Codespace.
+You will not need to run your requirements as they are already pre-installed on the codespaces enviornment. 
 
 **NOTE:** If GitHub Codespaces is not enabled in your organization, you can enable it by following the instructions [here](https://docs.github.com/en/codespaces/managing-codespaces-for-your-organization/enabling-or-disabling-github-codespaces-for-your-organization), or, if you cannot change your GitHub organization's settings, create free personal GitHub account [here](https://github.com/signup?ref_cta=Sign+up&ref_loc=header+logged+out&ref_page=%2F&source=header-home).
 
@@ -99,10 +102,12 @@ Go back to your `Azure Portal` and find your `Resource Group`that should by now 
 After deploying the resources, you will need to configure the environment variables in the `.env` file. The `.env` file is a configuration file that contains the environment variables for the application. The `.env` file is automatically created running the following command within the terminal in your Codespace:
 
 ```bash
-cd challenge0
+cd Challenge0
 ./get-keys.sh --resource-group <resource-group-name>
 ```
 
+If needed run `chmod u+rx get-keys.sh` before the get keys script with the resource group.
+ 
 This script will connect to Azure and fetch the necessary keys and populate the `.env` file with the required values in the root directory of the repository. If needed, script will prompt you to sign in to your Azure account.
 
 When the script is finished, review the `.env` file to ensure that all the values are correct. If you need to make any changes, you can do so manually.

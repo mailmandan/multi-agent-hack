@@ -4,8 +4,16 @@ Agentic AI systems have the potential to transform the way businesses operate, b
 
 ## ✨ Features
 This repo demonstrates the following concepts and how to implement them:
+- Orchestration of specialized AI agents
+- Agent-to-agent communication patterns
+- Complex workflow management
+- Cosmos DB for persistence
+- Application Insights monitoring
+- GitHub Codespaces for instant development environment setup
+- Infrastructure as Code (IaC) using Azure Bicep/ARM templates
+- Structured logging and telemetry
 
-- 
+ 
 
 ## 🚀 Getting Started
 

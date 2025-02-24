@@ -1,25 +1,25 @@
 {
-  "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
+  "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json",
   "languageVersion": "2.0",
   "contentVersion": "1.0.0.0",
   "metadata": {
     "_generator": {
       "name": "bicep",
-      "version": "0.32.4.45862",
+      "version": "0.31.34.60546",
       "templateHash": "13282901028774763433"
     }
   },
   "parameters": {
     "location": {
       "type": "string",
-      "defaultValue": "EastUS2",
+      "defaultValue": "swedencentral",
       "metadata": {
         "description": "Location for all resources."
       }
     },
     "azureOpenAILocation": {
       "type": "string",
-      "defaultValue": "EastUS",
+      "defaultValue": "swedencentral",
       "metadata": {
         "description": "Location for OpenAI resources."
       }
@@ -108,6 +108,50 @@
       },
       "dependsOn": [
         "openai"
+      ]
+    },
+    "openai::gpt4": {
+      "type": "Microsoft.CognitiveServices/accounts/deployments",
+      "apiVersion": "2023-10-01-preview",
+      "name": "[format('{0}/{1}', format(variables('uniqueNameFormat'), 'openai'), 'gpt-4')]",
+      "sku": {
+        "name": "GlobalStandard",
+        "capacity": "[parameters('resourceSize').gpt4oCapacity]"
+      },
+      "properties": {
+        "model": {
+          "format": "OpenAI",
+          "name": "gpt-4",
+          "version": "turbo-2024-04-09"
+        },
+        "versionUpgradeOption": "NoAutoUpgrade"
+      },
+      "dependsOn": [
+        "openai",
+        "openai::gpt4o"
+      ]
+    }
+    ,
+    "openai::dalle3": {
+      "type": "Microsoft.CognitiveServices/accounts/deployments",
+      "apiVersion": "2023-10-01-preview",
+      "name": "[format('{0}/{1}', format(variables('uniqueNameFormat'), 'openai'), 'dall-e-3')]",
+      "sku": {
+        "name": "Standard",
+        "capacity": 1
+      },
+      "properties": {
+        "model": {
+          "format": "OpenAI",
+          "name": "dall-e-3",
+          "version": "3.0"
+        },
+        "versionUpgradeOption": "NoAutoUpgrade"
+      },
+      "dependsOn": [
+        "openai",
+        "openai::gpt4o",
+        "openai::gpt4"
       ]
     },
     "cosmos::autogenDb::memoryContainer": {
@@ -358,6 +402,14 @@
                 {
                   "name": "AZURE_OPENAI_DEPLOYMENT_NAME",
                   "value": "gpt-4o"
+                },
+                {
+                  "name": "AZURE_OPENAI_GPT4_DEPLOYMENT_NAME",
+                  "value": "gpt-4"
+                },
+                {
+                  "name": "AZURE_OPENAI_DALLE3_DEPLOYMENT_NAME",
+                  "value": "dall-e-3"
                 },
                 {
                   "name": "AZURE_OPENAI_API_VERSION",
