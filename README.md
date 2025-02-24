@@ -50,27 +50,22 @@ Challenge 1:  [Building your first Multi-Agent](Challenge1/readme.md)
 
 - A step-by-step guide on creating your own Travel Agency Agents: create a team composed of several planners, guides and marketing professionals to create a personalized travel with tailored itineraries, local guidance, whilst delivering enriched content to your customers.
 
-
 Challenge 2:  [Expand Your Multi-Agent Capabilities](Challenge2/readme.md)
 
 - Now that you know the basics of Multi-Agent scenarios, it's time to build your own!We'll start by using the MACAE app that will aid you on having the basic setup created. Then, this open-ended exercise will guide you through the customization path your MVP needs. 
 
 Challenge 3: [Advancing Real-World Applications](Challenge3/readme.md)
-
+- Now that you have created your agents let's move into a real life scenario. Your agents sure are smart, but they do need their resources. In this open-ended challenge, you will have the opportunity to expand your App's capabilities by using Azure Functions, CosmosDB, Document Intelligence, etc. 
 
 
 Each challenge comes with its own set of tasks and objectives. Feel free to explore the challenges, learn, and have fun during this hackathon! 
+
 ## 💰 Costs
 
 You can estimate the cost of this project's architecture with [Azure's pricing calculator](https://azure.microsoft.com/pricing/calculator/) 
-Please use this [link](https://azure.com/e/c5b4707661814dd787c3a83cbcf51be5) for an example in $USD, in Sweden Central of the price of the sample MVP:
+Please use this [link](https://azure.com/e/c5b4707661814dd787c3a83cbcf51be5) for an example in $USD, in Sweden Central of the price of the sample MVP.
+Calculator values are adjusted to the minimum values allowed, having in mind GPT-4o uses 10K tokens instead of 1M, text-3-large uses 5k tokens instead of 1M, and Azure Monitor would be free for the first 3 months and MVP would consume 0,001GB using this sample.
 
-Average Monthly Cost:
-* Azure Cosmos DB Standard provisioned throughput ($0.25 USD per 1M RU/s): $5,84
-* Azure App Service (B1 Plan): $13.14
-* Azure OpenAI (GPT-4o 1M input/output tokens): $12,50 (Sample uses 10K tokens)
-* Azure OpenAI (text-3-large - 1M tokens):  $0.13 (Sample uses 5K tokens)
-* Azure Application Insights and Log Analytics - FREE for the first 3 months (Sample uses 0,001 GB. 1GB is $74,75)
 
 ## ⚠️ Important Security Notice
 
