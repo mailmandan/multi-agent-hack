@@ -22,7 +22,7 @@ This is an open-ended exercise, which means there is no ground truth, as what yo
 Let's get started! 🚀
 
 
-## Step 1 - Local Deployment
+## Step 1 - Local Deployment 💻
 
 1. **Copy your `.env` file:**
 
@@ -54,3 +54,23 @@ Great! If you've made it this far you should be able to see an empty app that lo
 [insert image]
 
 Now we need to populate it. 
+
+[add data]
+
+## Step 2 -  The Ideation of Customization 💡
+
+This solution is designed to be easily customizable. You can modify the front end site, or even build your own front end and attach to the backend API. 
+
+You can further customize the backend by adding your own agents with their own specific capabilities. Deeper technical information to aid in this customization can be found in this [document](./documentation/CustomizeSolution.md).
+
+### Additional resources
+
+- [Python FastAPI documentation](https://fastapi.tiangolo.com/learn/)
+- [AutoGen Framework Documentation](https://microsoft.github.io/autogen/dev/user-guide/core-user-guide/index.html)
+- [Azure Container App documentation](https://learn.microsoft.com/en-us/azure/azure-functions/functions-how-to-custom-container?tabs=core-tools%2Cacr%2Cazure-cli2%2Cazure-cli&pivots=container-apps)
+- [Azure OpenAI Service - Documentation, quickstarts, API reference - Azure AI services | Microsoft Learn](https://learn.microsoft.com/en-us/azure/ai-services/openai/concepts/use-your-data)
+- [Azure Cosmos DB documentation](https://learn.microsoft.com/en-us/azure/cosmos-db/)
+  
+
+## Step 3 -  Customization comes to Fruition  🍎
+
