@@ -52,7 +52,7 @@ Challenge 1:  [Building your first Multi-Agent](Challenge1/readme.md)
 
 
 Challenge 2:  [Expand Your Multi-Agent Capabilities](Challenge2/readme.md)
-
+Now that you know the basics of Multi-Agent scenarios, it's time to build your own!We'll start by using the MACAE app that will aid you on having the basic setup created. Then, this open-ended exercise will guide you through the customization path your MVP needs. 
 
 Challenge 3: [Advancing Real-World Applications](Challenge3/readme.md)
 
