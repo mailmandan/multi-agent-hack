@@ -52,6 +52,7 @@ Challenge 1:  [Building your first Multi-Agent](Challenge1/readme.md)
 
 
 Challenge 2:  [Expand Your Multi-Agent Capabilities](Challenge2/readme.md)
+
 Now that you know the basics of Multi-Agent scenarios, it's time to build your own!We'll start by using the MACAE app that will aid you on having the basic setup created. Then, this open-ended exercise will guide you through the customization path your MVP needs. 
 
 Challenge 3: [Advancing Real-World Applications](Challenge3/readme.md)
@@ -61,15 +62,15 @@ Challenge 3: [Advancing Real-World Applications](Challenge3/readme.md)
 Each challenge comes with its own set of tasks and objectives. Feel free to explore the challenges, learn, and have fun during this hackathon! 
 ## 💰 Costs
 
-You can estimate the cost of this project's architecture with [Azure's pricing calculator](https://azure.microsoft.com/pricing/calculator/)
-
-As an example in $USD, here's how a sample MVP would be  currently built:
+You can estimate the cost of this project's architecture with [Azure's pricing calculator](https://azure.microsoft.com/pricing/calculator/) 
+Please use this [link](https://azure.com/e/c5b4707661814dd787c3a83cbcf51be5) for an example in $USD, in Sweden Central of the price of the sample MVP:
 
 Average Monthly Cost:
-* Azure Cosmos DB Serverless ($0.25 USD per 1M RU/s): $0.25
-* Azure App Service (B1 Plan): $12.41
-* Azure OpenAI (GPT-4o 1M input/output tokens): $20 (Sample uses 10K tokens)
-* Azure OpenAI (text-3-large): < $0.01 (Sample uses 5K tokens)
+* Azure Cosmos DB Standard provisioned throughput ($0.25 USD per 1M RU/s): $5,84
+* Azure App Service (B1 Plan): $13.14
+* Azure OpenAI (GPT-4o 1M input/output tokens): $12,50 (Sample uses 10K tokens)
+* Azure OpenAI (text-3-large - 1M tokens):  $0.13 (Sample uses 5K tokens)
+* Azure Application Insights - FREE for the first 3 months, after that 1GB x 30 days - $74,75 (Sample uses 0,001 GB)
 
 ## ⚠️ Important Security Notice
 
