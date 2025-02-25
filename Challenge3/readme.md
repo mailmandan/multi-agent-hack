@@ -10,12 +10,7 @@ Up next you will find some ideas that you can implement, tips and accelerators. 
 
 ### 1) Memory using Cosmos DB 🧠
 
+### 2) Azure Deployment
 
-### 2) Scheduled Functions ⏰
+### 3) Monitoring and Logging 📜
 
-
-### 3) Data Processing for Everyone 📊
-https://github.com/kzkalra/RAGPublic/tree/TCUpdates
-
-### 4) Monitoring and Logging 📜
-https://github.com/Azure-Samples/openai-python-enterprise-logging
