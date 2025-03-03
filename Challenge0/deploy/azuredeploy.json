@@ -224,6 +224,18 @@
         }
       }
     },
+    "containerRegistry": {
+      "type": "Microsoft.ContainerRegistry/registries",
+      "apiVersion": "2023-01-01-preview",
+      "name": "[format(variables('uniqueNameFormat'), 'containerreg')]",
+      "location": "[parameters('location')]",
+      "sku": {
+        "name": "Basic"
+      },
+      "properties": {
+        "adminUserEnabled": true
+      }
+    },
     "appInsights": {
       "type": "Microsoft.Insights/components",
       "apiVersion": "2020-02-02-preview",
