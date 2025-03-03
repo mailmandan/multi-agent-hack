@@ -51,7 +51,7 @@ cd Challenge2/src/frontend && python frontend_server.py
 
 Great! If you've made it this far you should be able to see an empty app that looks something like this:
 
-![image](https://github.com/user-attachments/assets/48b806a2-bfac-47be-a77d-17f2de707105)
+![image](https://github.com/user-attachments/assets/1587671e-ada9-4d5c-a140-35888e42d27b)
 
 
 ## Step 2 -  The Ideation of Customization 💡
