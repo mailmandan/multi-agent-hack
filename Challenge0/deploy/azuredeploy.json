@@ -13,7 +13,7 @@
     "location": {
       "type": "string",
       "defaultValue": "swedencentral",
-      "metadata": {dock
+      "metadata": {
         "description": "Location for all resources."
       }
     },
