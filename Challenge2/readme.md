@@ -51,12 +51,8 @@ cd Challenge2/src/frontend && python frontend_server.py
 
 Great! If you've made it this far you should be able to see an empty app that looks something like this:
 
-![image](https://github.com/user-attachments/assets/e5c6fb4d-e615-46fb-ba6e-a7ddfb7714e0)
+![image](https://github.com/user-attachments/assets/48b806a2-bfac-47be-a77d-17f2de707105)
 
-
-Now we need to populate it. 
-
-[add data]
 
 ## Step 2 -  The Ideation of Customization 💡
 
