@@ -354,7 +354,8 @@ resource frontendAppService 'Microsoft.Web/sites@2021-02-01' = {
   tags: tags
   kind: 'app,linux,container'  // Add this line
   properties: {
-    serverFarmId: frontendAppServicePlan.id
+    serverFarmId: frontendAppServicePlan.id,
+    httpsOnly: true
     reserved: true
     siteConfig: {
       linuxFxVersion:'DOCKER|${frontendDockerImageURL}'
