@@ -86,7 +86,7 @@
     "dockerRegistryUrl": "[format('https://{0}.azurecr.io', variables('resgistryName'))]",
     "backendDockerImageURL": "[format('{0}.azurecr.io/macaebackend:{1}', variables('resgistryName'), variables('appVersion'))]",
     "frontendDockerImageURL": "[format('{0}.azurecr.io/macaefrontend:{1}', variables('resgistryName'), variables('appVersion'))]",
-    "uniqueNameFormat": "[format('{0}-{1}-{2}', parameters('prefix'), take(toLower(uniqueString(resourceGroup().id, parameters('prefix'))), 8), 'containerreg')]",
+    "uniqueNameFormat": "[format('{0}{1}{2}', parameters('prefix'), take(toLower(uniqueString(resourceGroup().id, parameters('prefix'))), 8), 'containerreg')]",
     "aoaiApiVersion": "2024-08-01-preview"
   },
   "resources": {
