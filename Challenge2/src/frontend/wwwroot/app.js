@@ -1,6 +1,16 @@
 (() => {
     window.headers = GetAuthDetails();
-    const apiEndpoint = sessionStorage.getItem('apiEndpoint') || BACKEND_API_URL;
+    const currentHost = window.location.hostname;
+
+    let apiEndpoint;
+    if (currentHost.includes('github.dev')) {
+        // We're in Codespaces - use the proper HTTPS URL
+        // For backend on port 8000
+        apiEndpoint = `https://${currentHost.replace('3000', '8000')}`;
+    } else {
+        // We're running locally
+        apiEndpoint = "http://localhost:8000";
+    }
     const goHomeButton = document.getElementById("goHomeButton");
     const newTaskButton = document.getElementById("newTaskButton");
     const closeModalButtons = document.querySelectorAll(".modal-close-button");

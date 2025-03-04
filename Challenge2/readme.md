@@ -26,27 +26,24 @@ Let's get started! 🚀
 
 1. **Copy your `.env` file:**
 
-- Navigate to the `src` folder and copy your `.env` file from root on this section.
+- Navigate to the `src` folder and copy your `.env` file to both the backend and frontend folders.
 
-2. **Install requirements:**
+2. **Install the requirements: && run your application**
 
 - In each of the frontend and backend folders -
 Open a terminal in the `src` folder and run:
+
+For backend:
 ```bash
-pip install -r requirements.txt
+cd Challenge2/src/backend && python -m venv venv && source venv/bin/activate && pip install -r requirements.txt && python app.py
 ```
 
-3. **Run the application:**
-- First, we run the backend:
+For frontend:
 ```bash
-cd Challenge2/src/backend && python app.py
-```
-- In a new terminal, run:
-```bash
-cd Challenge2/src/frontend && python frontend_server.py
+cd Challenge2/src/frontend && python -m venv venv && source venv/bin/activate && pip install -r requirements.txt &&  python frontend_server.py
 ```
 
-4. Open a browser and navigate to `http://localhost:3000`
+3. Open a browser and navigate to `http://127.0.0.1:3000/`
 5. To see swagger API documentation, you can navigate to `http://localhost:8000/docs`
 
 Great! If you've made it this far you should be able to see an empty app that looks something like this:
