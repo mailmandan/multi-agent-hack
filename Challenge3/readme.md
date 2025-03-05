@@ -186,3 +186,4 @@ By understanding and customizing the memory system, you can create more powerful
 
 ### 3) Monitoring and Logging 📜
 
+On this step, we will use Azure Monitor to create a deeply comprehensive look into metrics from AOAI. The 'Azure OpenAI Insights' workbook offers deep insights into Azure OpenAI usage, helping you manage costs, optimize performance, and make strategic decisions for a robust AI infrastructure.  Please follow the [Step-by-Step guide](https://github.com/dolevshor/Azure-OpenAI-Insights/tree/main) from our Azure Fastrack Team.

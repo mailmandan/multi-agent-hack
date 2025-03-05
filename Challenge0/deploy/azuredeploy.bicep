@@ -41,6 +41,7 @@ var dockerRegistryUrl = 'https://${resgistryName}.azurecr.io'
 @description('URL for frontend docker image')
 var backendDockerImageURL = '${resgistryName}.azurecr.io/macaebackend:${appVersion}'
 var frontendDockerImageURL = '${resgistryName}.azurecr.io/macaefrontend:${appVersion}'
+var uniqueShortNameFormat = '${toLower(prefix)}{0}${uniqueString(resourceGroup().id, prefix)}'
 
 var uniqueNameFormat = '${prefix}-{0}-${uniqueString(resourceGroup().id, prefix)}'
 var aoaiApiVersion = '2024-08-01-preview'
@@ -155,6 +156,8 @@ resource cosmos 'Microsoft.DocumentDB/databaseAccounts@2024-05-15' = {
       }
     ]
   }
+
+  
 
   resource contributorRoleDefinition 'sqlRoleDefinitions' existing = {
     name: '00000000-0000-0000-0000-000000000002'
@@ -333,6 +336,18 @@ resource containerApp 'Microsoft.App/containerApps@2024-03-01' = {
   }
 
   }
+
+  resource acr 'Microsoft.ContainerRegistry/registries@2023-11-01-preview' = {
+    name: format(uniqueShortNameFormat, 'acr')
+    location: location
+    sku: {
+      name: 'Standard'
+    }
+    properties: {
+      adminUserEnabled: true  // Add this line
+    }
+  }
+
 resource frontendAppServicePlan 'Microsoft.Web/serverfarms@2021-02-01' = {
   name: format(uniqueNameFormat, 'frontend-plan')
   location: location
